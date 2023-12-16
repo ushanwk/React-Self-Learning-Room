@@ -1,6 +1,20 @@
+import {Fragment} from "react";
+
 function ListGroup(){
+
+    const animals = [
+        'Dog', 'Cat', 'Parrot'
+    ];
+
     return (
-        <h1>List Group</h1>
+        <Fragment>
+            <h1>Hello</h1>
+            <ul className="list-inside">
+                <li>5 cups chopped Porcini mushrooms</li>
+                <li>5 cups chopped Porcini mushrooms</li>
+                <li>5 cups chopped Porcini mushrooms</li>
+            </ul>
+        </Fragment>
     );
 }
 
