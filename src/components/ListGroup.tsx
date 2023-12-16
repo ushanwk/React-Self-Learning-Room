@@ -10,9 +10,9 @@ function ListGroup(){
         <Fragment>
             <h1>Hello</h1>
             <ul className="list-inside">
-                <li>5 cups chopped Porcini mushrooms</li>
-                <li>5 cups chopped Porcini mushrooms</li>
-                <li>5 cups chopped Porcini mushrooms</li>
+                {
+                    animals.map(animal=> <li key={animal}>{animal}</li>)
+                }
             </ul>
         </Fragment>
     );
