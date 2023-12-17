@@ -1,16 +1,20 @@
+import {useState} from "react";
+
 function ListGroup() {
 
     const animals = [
         'Dog', 'Cat', 'Parrot'
     ];
 
+    const [selectedIndex, setSelectedIndex] = useState(-1);
+    
     // const message = animals.length == 0 ? <h2>No item found</h2>: null;
 
     // const getMessage = () => {
     //     return animals.length == 0 ? <h2>No item found</h2>: null;
     // }
 
-    const handleClick = (event: any) => console.log(event);
+    // const handleClick = (event: never) => console.log(event);
     
 
     return (
@@ -22,10 +26,11 @@ function ListGroup() {
             {animals.length == 0 && <h2>No item found</h2>}
 
             <ul className="list-inside">
-                {animals.map((animal) => (
+                {animals.map((animal, index) => (
                     <li
                         key = {animal}
-                        onClick={handleClick}
+                        onClick={() => { setSelectedIndex(index) }}
+                        className={selectedIndex === index ? 'bg-blue-300': ''}
                         >
                             {animal}
                     </li>
