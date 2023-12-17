@@ -1,13 +1,18 @@
 import {useState} from "react";
 
-function ListGroup() {
+interface Props {
+    animals: string[];
+    headings: string;
+}
 
-    const animals = [
-        'Dog', 'Cat', 'Parrot'
-    ];
+function ListGroup({animals, headings}: Props) {
+
+    // const animals = [
+    //     'Dog', 'Cat', 'Parrot'
+    // ];
 
     const [selectedIndex, setSelectedIndex] = useState(-1);
-    
+
     // const message = animals.length == 0 ? <h2>No item found</h2>: null;
 
     // const getMessage = () => {
@@ -15,11 +20,10 @@ function ListGroup() {
     // }
 
     // const handleClick = (event: never) => console.log(event);
-    
 
     return (
         <>
-            <h1 className="text-3xl text-green-400 pb-5">Hello</h1>
+            <h1 className="text-3xl text-green-400 pb-5">{headings}</h1>
 
             {/*{animals.length == 0 ? <h2>No item found</h2>: null}*/}
 
@@ -27,14 +31,16 @@ function ListGroup() {
 
             <ul className="list-inside">
                 {animals.map((animal, index) => (
-                    <li
-                        key = {animal}
-                        onClick={() => { setSelectedIndex(index) }}
-                        className={selectedIndex === index ? 'bg-blue-300': ''}
+                        <li
+                            key={animal}
+                            onClick={() => {
+                                setSelectedIndex(index)
+                            }}
+                            className={selectedIndex === index ? 'bg-blue-300' : ''}
                         >
                             {animal}
-                    </li>
-                )
+                        </li>
+                    )
                 )}
             </ul>
         </>
