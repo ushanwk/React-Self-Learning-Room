@@ -1,7 +1,7 @@
 import ListGroup from "./components/ListGroup.tsx";
 
-function App(){
-    return(
+function App() {
+    return (
         <div>
             <ListGroup/>
         </div>
