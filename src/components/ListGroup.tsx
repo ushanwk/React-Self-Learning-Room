@@ -1,10 +1,8 @@
-function ListGroup(){
+function ListGroup() {
 
-    let animals = [
+    const animals = [
         'Dog', 'Cat', 'Parrot'
     ];
-
-    animals = [];
 
     // const message = animals.length == 0 ? <h2>No item found</h2>: null;
 
@@ -18,9 +16,9 @@ function ListGroup(){
             {/*{animals.length == 0 ? <h2>No item found</h2>: null}*/}
             {animals.length == 0 && <h2>No item found</h2>}
             <ul className="list-inside">
-                {
-                    animals.map(animal=> <li key={animal}>{animal}</li>)
-                }
+                {animals.map(animal => <li key={animal} onClick={() => {
+                    console.log(animal)
+                }}>{animal}</li>)}
             </ul>
         </>
     );
